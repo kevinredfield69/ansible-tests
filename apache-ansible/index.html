@@ -1,0 +1,10 @@
+<html>
+	<head>
+		<h1>Pagina principal</h1>
+	</head>
+	<body>
+		<p>Pagina principal hecha con configuracion de <strong>Ansible</strong></p>
+		<p><strong>Nombre del equipo:</strong> {{ ansible_hostname }} </p>
+		<p><strong>Direccion IP del equipo:</strong> {{ ansible_eth1.ipv4.address }} </p>
+	</body>
+</html>

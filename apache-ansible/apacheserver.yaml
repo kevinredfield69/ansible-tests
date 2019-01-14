@@ -1,0 +1,21 @@
+---
+- hosts: all
+#  sudo: true
+  become: yes
+  name: Instalar y configurar apache
+  tasks:
+  - name: Actualizar lista de paquetes
+    apt: update_cache=yes
+
+  - name: Asegurarse de que apache está instalado
+    apt: name=apache2 state=latest
+  
+  - name: Cambiar index.html por uno estático
+    template: >
+      src=index.html
+      dest=/var/www/html/index.html
+      mode=644
+      owner=www-data
+      group=www-data    
+#    notify
+#      - restart apache
