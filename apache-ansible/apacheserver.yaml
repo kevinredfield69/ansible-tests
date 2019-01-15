@@ -1,6 +1,5 @@
 ---
 - hosts: all
-#  sudo: true
   become: yes
   name: Instalar y configurar apache
   tasks:
@@ -17,5 +16,3 @@
       mode=644
       owner=www-data
       group=www-data    
-#    notify
-#      - restart apache
